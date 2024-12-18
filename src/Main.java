@@ -31,17 +31,25 @@ public class Main {
         for (int num : intArr) {
             System.out.print(num + ", ");
         }
+        System.out.println("\n******************* task 1");
 
         for (double num : doubleArr) {
             System.out.print(num + ", ");
         }
+        System.out.println("\n******************* task 2");
+
 
         for (int i = 0; i < randomArr.length;  i++) {
             if (i == randomArr.length - 1) {
-                System.out.println(randomArr[i]);
+                // 4
+                System.out.print(randomArr[i]);
+            }else {
+                // 0-3
+                System.out.print(randomArr[i] + ",");
             }
-            System.out.print(randomArr[i] + ", ");
         }
+        System.out.println("\n******************* task 3");
+
 
 /*        Задача 3
         Распечатайте на отдельной строчке элементы каждого массива в
@@ -58,16 +66,23 @@ public class Main {
         for (int i = intArr.length - 1; i >= 0; i--) {
             System.out.print(intArr[i] + ", ");
         }
+        System.out.println("\n******************* task 4");
 
-        for (double num : doubleArr) {
-            for (double i = doubleArr.length - 1; i >= 0; i--) {
+        for (int i = doubleArr.length - 1; i >= 0; i--) {
+            System.out.print(doubleArr[i] + ", ");
+        }
+        System.out.println("\n******************* task 5");
+
+        for (int i = randomArr.length - 1; i >= 0; i--) {
+            if (i == randomArr.length) {
+                // 4
+                System.out.print(randomArr[i]);
+            } else {
+                // 0-3
+                System.out.print(randomArr[i] + ",");
             }
-            System.out.print(num + ", ");
         }
-        for (int i = 0; i > randomArr.length; i--) {
-            System.out.println(i + ", ");
-        }
-        System.out.println();
+
         /*Бухгалтеры попросили посчитать сумму всех выплат за месяц.
         Создайте массив с пятью целочисленными элементами и задайте
         каждому элементу значение.
@@ -81,7 +96,7 @@ public class Main {
         for (int expenses : expenseTeacher){
             totalExpenses += expenses;
         }
-        System.out.println("Сумма трат за месяц составила " + totalExpenses + " рублей");
+        System.out.println("\n Сумма трат за месяц составила " + totalExpenses + " рублей");
 
         /*Также бухгалтерия попросила найти минимальную и максимальную траты за неделю.
         Создайте массив с пятью целочисленными элементами и задайте каждому элементу значение.
@@ -99,8 +114,48 @@ public class Main {
                 maxExpenses = expenses;
             }
         }
-
         System.out.println("Минимальная сумма трат за неделю составила " + minExpenses + " рублей");
         System.out.println("Максимальная сумма трат за неделю составила " + maxExpenses + " рублей");
+
+            /*Задача 3
+    Теперь бухгалтерия хочет понять, какую в среднем сумму компания тратила еженедельно.
+    Создайте массив с пятью целочисленными элементами и задайте каждому элементу значение.
+    Напишите программу, которая посчитает среднее значение трат за месяц (то есть сумму всех трат за месяц поделить на количество недель), и выведите в консоль результат в формате: «Средняя сумма трат за месяц составила ... рублей».
+    Важно помнить: подсчет среднего значения может иметь остаток, то есть быть не целым, а дробным числом.*/
+
+        System.out.println("Средняя сумма трат за месяц составила " + totalExpenses/expenseTeacher.length + " рублей");
+
+        /*Задача 4
+В бухгалтерской книге появился баг. Что-то пошло не так: фамилии и имена сотрудников начали отображаться в обратную сторону. Т. е. вместо «Иванов Иван» мы имеем «навИ вонавИ». Данные с именами сотрудников хранятся в виде массива символов
+char[ ]
+.
+Напишите код, который развернет содержимое массива, а затем
+распечатает его содержимое. В качестве данных для массива используйте: char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+В результате в консоль должно быть выведено: Ivanov Ivan.
+Важно: не используйте дополнительные массивы для решения этой
+задачи. Необходимо корректно пройти по массиву циклом и поменять его содержимое , чтобы установить правильный порядок.*/
+
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+
+        String name = "";
+        for (int i = reverseFullName.length-1; i >= 0; i--) {
+
+            name += reverseFullName[i];
+        }
+        System.out.println(name);
+
+/*
+        String myName = "kyzy Aichurok"; // k
+
+        int kol = 0;
+
+        for (int i = 0; i < myName.length(); i++) {
+            // if
+            if (myName.charAt(i) == 'k'){
+                kol++;
+//                System.out.println(myName.charAt(i));
+            }
+        }
+        System.out.println(kol);*/
     }
 }
